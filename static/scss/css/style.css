@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.main_container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background: url("/images/bg-desktop.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: hsl(229, 57%, 11%);
+  background-position-y: bottom;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sub_container {
+  display: flex;
+  height: 100%;
+  max-width: 1440px;
+  width: 1440px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.sub_container .storage,
+.sub_container .folder {
+  background-color: hsl(228, 56%, 26%);
+}
+.sub_container .folder {
+  height: 200px;
+  width: 320px;
+  border-radius: 15px;
+  border-top-right-radius: 80px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+.sub_container .folder .logo {
+  height: 35px;
+}
+.sub_container .folder .image_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: hsl(229, 57%, 11%);
+}
+.sub_container .folder .fileIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.sub_container .storage {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  height: 150px;
+  width: 500px;
+  padding: 20px 30px;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+.sub_container .storage .leftStorage {
+  position: absolute;
+  right: 40px;
+  top: -30%;
+  background-color: white;
+  border-radius: 10px;
+  width: 150px;
+  height: 70px;
+}
+.sub_container .storage .leftStorage p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(229, 57%, 11%);
+  font-size: 2.2rem;
+  padding: 5px 10px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.sub_container .storage .leftStorage p span {
+  font-size: 1rem;
+}
+.sub_container .storage .leftStorage::after {
+  position: absolute;
+  content: "";
+  border: 25px solid white;
+  border-bottom: 25px solid transparent;
+  border-left: 25px solid transparent;
+  border-top: 25px solid transparent;
+  top: 50%;
+  right: 0;
+  z-index: 10;
+}
+.sub_container .storage p {
+  color: white;
+  font-size: 1rem;
+}
+.sub_container .storage .storage_bar_wrapper {
+  position: relative;
+  width: 100%;
+  height: 15px;
+  border-radius: 10px;
+  background-color: hsl(229, 57%, 11%);
+}
+.sub_container .storage .storage_bar_wrapper::before {
+  position: absolute;
+  content: "0 GB";
+  font-size: 1rem;
+  color: white;
+  top: 0;
+  left: 0;
+  height: 35px;
+  font-weight: 700;
+  width: 70px;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.sub_container .storage .storage_bar_wrapper::after {
+  position: absolute;
+  content: "100 GB";
+  font-size: 1rem;
+  color: white;
+  top: 0;
+  right: 0;
+  height: 35px;
+  font-weight: 700;
+  width: 70px;
+  z-index: 999;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.sub_container .storage .storage_bar_wrapper .storage_bar {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(85deg, rgb(237, 156, 150) 0%, rgb(228, 88, 145) 100%);
+}
+.sub_container .storage .storage_bar_wrapper .storage_bar::after {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 767px) {
+  .main_container {
+    background: url("/images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+  }
+  .sub_container .storage .leftStorage {
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+  }
+  .sub_container .storage .leftStorage::after {
+    border-right: 25px solid transparent;
+  }
+}
+@media screen and (max-width: 500px) {
+  .sub_container .storage {
+    width: 350px;
+  }
+}
