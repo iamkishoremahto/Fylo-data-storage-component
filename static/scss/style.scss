@@ -56,8 +56,8 @@ body {
     }
 
     .folder {
-        height: 200px;
-        width: 320px;
+        height: 210px;
+        width: 330px;
         border-radius: 15px;
         border-top-right-radius: 80px;
         display: flex;
@@ -98,8 +98,8 @@ body {
         justify-content: center;
         flex-direction: column;
         gap: 10px;
-        height: 150px;
-        width: 500px;
+        height: 160px;
+        width: 550px;
         padding: 20px 30px;
         padding-top: 10px;
         border-radius: 10px;
@@ -125,7 +125,7 @@ body {
 
                 margin-bottom: 0;
                 span{
-                    font-size: 1rem;
+                    font-size: 0.8rem;
                     color: $Grayish_Blue;
                     margin-left: 5px;
                 }
